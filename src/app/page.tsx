@@ -27,7 +27,7 @@ export default function Page() {
                 {RESUME_DATA.position}
               </p>
             </div>
-            <div className='flex max-w-md items-center gap-4 text-pretty pt-1 font-mono text-sm text-zinc-600'>
+            <div className='flex max-w-md flex-wrap items-center gap-x-4 gap-y-2 text-pretty pt-1 font-mono text-sm text-zinc-600'>
               <div className='inline-flex items-center gap-x-1 align-baseline leading-none hover:underline'>
                 <MapPin className='size-3' />
                 {RESUME_DATA.location}
@@ -71,7 +71,7 @@ export default function Page() {
                     <span className='mx-2'>-</span>
                     <span className='text-sm'>{education.tips}</span>
                   </div>
-                  <div className='text-sm tabular-nums text-gray-500'>
+                  <div className='flex-shrink-0 text-sm tabular-nums text-gray-500'>
                     {education.start} - {education.end}
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export default function Page() {
                       {work.company}
                     </a>
                   </h3>
-                  <div className='text-sm tabular-nums text-gray-500'>
+                  <div className='flex-shrink-0 text-sm tabular-nums text-gray-500'>
                     {work.start} - {work.end}
                   </div>
                 </div>

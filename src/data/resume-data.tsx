@@ -1,3 +1,10 @@
+// 1.前端安全(加密算法，对称、非对称，XSS、CSRF)
+// 2.工程化相关(webpack打包、代码混淆，eslint、prettier代码规范)
+// 3.http协议(请求方法、状态码、跨域问题)
+// 4.前端性能优化
+// 5.react基本设计模式
+// 6.git相关
+// 7.兼容性相关
 export const RESUME_DATA = {
   name: '肖学海',
   location: '武汉',
@@ -32,7 +39,7 @@ export const RESUME_DATA = {
       link: '#',
       title: '前端工程师',
       start: '2021.03',
-      end: '2024.03',
+      end: '至今',
       descriptions: [
         '负责搭建前端工程，开发公司saas系统，将公司部分桌面应用重写为web应用',
         '根据项目情况对常见的表格、表单、弹窗等公共业务组件及hooks进行封装',
@@ -58,21 +65,13 @@ export const RESUME_DATA = {
     '熟悉html5、css3、javascript、typescript、es6、websocket',
     '熟练使用react、next.js、taro、vue、uniapp',
     '熟悉react相关生态，如react-router、zustand、redux、framer-motion',
-    '熟悉tailwindcss、nt-design、element-ui、avant',
+    '熟悉tailwindcss、ant-design、element-ui、vant',
     '熟悉webpack、vite前端构建工具的配置及使用',
     '熟悉eslint、prettier、stylelint、husky、commitlint，具备良好的代码规范',
     '对react-native、node.js、express.js、nest.js、typeorm、mysql、redis、nginx、docker、drone-ci有一定的使用经验',
+    '对鸿蒙移动开发、arkTS有一定了解',
   ],
   projects: [
-    {
-      title: '个人网站',
-      descriptions: [
-        '该项目使用next.js、react、typescript、tailwindcss、shadcn-ui、framer-motion、mdx开发',
-        '搭建基础的工程化配置，使用mdx-bundler处理mdx文件，framer-motion实现动画效果，使用tailwindcss完成响应式布局，适配移动端、PC端等多种分辨率',
-        '使用next.js服务器端渲染，提高渲染速度及SEO',
-        '项目在线地址：https://xiaoxuehai.site',
-      ],
-    },
     {
       title: '华隆社区平台',
       descriptions: [
@@ -108,6 +107,15 @@ export const RESUME_DATA = {
         '大量数据场景使用虚拟列表进行优化，解决部分页面卡顿问题',
         '搭建小程序首页自定义管理平台，让用户使用拖拉拽的方式对小程序首页布局样式及全局主题色进行自定义',
         '使用微信提供的ci工具，编写node.js脚本，一键上传小程序',
+      ],
+    },
+    {
+      title: '个人网站',
+      descriptions: [
+        '该项目使用next.js、react、typescript、tailwindcss、shadcn-ui、framer-motion、mdx开发',
+        '搭建基础的工程化配置，使用mdx-bundler处理mdx文件，framer-motion实现动画效果，使用tailwindcss完成响应式布局，适配移动端、PC端等多种分辨率',
+        '使用next.js服务器端渲染，提高渲染速度及SEO',
+        '项目在线地址：https://www.xiaoxuehai.site',
       ],
     },
   ],
