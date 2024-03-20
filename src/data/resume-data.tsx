@@ -67,7 +67,7 @@ export const RESUME_DATA = {
     {
       title: '个人网站',
       descriptions: [
-        '该项目使用next.js、react、typescript、tailwindcss、shadcn-ui、framer-motion、mdx开发，是公司内部使用的系统，该系统分为代理商端和管理员端，管理员端主要对客户、代理商进行管理，内置了公司内部的知识库及工单系统',
+        '该项目使用next.js、react、typescript、tailwindcss、shadcn-ui、framer-motion、mdx开发',
         '搭建基础的工程化配置，使用mdx-bundler处理mdx文件，framer-motion实现动画效果，使用tailwindcss完成响应式布局，适配移动端、PC端等多种分辨率',
         '使用next.js服务器端渲染，提高渲染速度及SEO',
         '项目在线地址：https://xiaoxuehai.site',
