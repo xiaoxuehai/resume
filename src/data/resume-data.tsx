@@ -1,10 +1,3 @@
-// 1.前端安全(加密算法，对称、非对称，XSS、CSRF)
-// 2.工程化相关(webpack打包、代码混淆，eslint、prettier代码规范)
-// 3.http协议(请求方法、状态码、跨域问题)
-// 4.前端性能优化
-// 5.react基本设计模式
-// 6.git相关
-// 7.兼容性相关
 export const RESUME_DATA = {
   name: '肖学海',
   location: '武汉',
