@@ -1,13 +1,13 @@
 import { MapPin, Mail, Phone, BriefcaseBusiness } from 'lucide-react';
 import { Metadata } from 'next';
 
-import { Avatar, AvatarImage } from '@/components/ui/avatar';
+import NextImage from 'next/image';
+
 import { Card, CardHeader, CardContent } from '@/components/ui/card';
 
 import { Section } from '@/components/ui/section';
 
 import { RESUME_DATA } from '@/data/resume-data';
-
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.position}`,
   description: RESUME_DATA.summary,
@@ -48,53 +48,16 @@ export default function Page() {
             </div>
           </div>
 
-          <Avatar className='size-20'>
-            <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} />
-          </Avatar>
+          <NextImage
+            alt={RESUME_DATA.name}
+            src={RESUME_DATA.avatarUrl}
+            width={80}
+            height={110}
+            className='rounded-md'
+          ></NextImage>
         </div>
         <Section>
-          <h2 className='border-l-4 border-zinc-600 pl-2 text-xl font-semibold leading-6'>
-            个人总结
-          </h2>
-          <p className='text-pretty font-mono text-sm text-zinc-600'>
-            {RESUME_DATA.summary}
-          </p>
-        </Section>
-        <Section>
-          <h2 className='border-l-4 border-zinc-600 pl-2 text-xl font-semibold leading-6'>
-            工作经历
-          </h2>
-          {RESUME_DATA.work.map(work => (
-            <Card key={work.company}>
-              <CardHeader>
-                <div className='flex items-center justify-between gap-x-2 text-base'>
-                  <h3 className='inline-flex items-center justify-center gap-x-1 font-semibold leading-none'>
-                    <a className='hover:underline' href={work.link}>
-                      {work.company}
-                    </a>
-                  </h3>
-                  <div className='text-sm tabular-nums text-gray-500'>
-                    {work.start} - {work.end}
-                  </div>
-                </div>
-
-                <h4 className='font-mono text-sm leading-none'>{work.title}</h4>
-              </CardHeader>
-              <CardContent className='mt-2 text-sm'>
-                {work.descriptions.map((description, index) => (
-                  <p key={description}>
-                    {index !== work.descriptions.length - 1 && (
-                      <span> {index + 1}.</span>
-                    )}
-                    {description}
-                  </p>
-                ))}
-              </CardContent>
-            </Card>
-          ))}
-        </Section>
-        <Section>
-          <h2 className='border-l-4 border-zinc-600 pl-2 text-xl font-semibold leading-6'>
+          <h2 className='border-l-[3px] border-zinc-600 pl-2 text-xl font-semibold leading-6'>
             教育经历
           </h2>
           {RESUME_DATA.education.map(education => (
@@ -117,23 +80,64 @@ export default function Page() {
             </Card>
           ))}
         </Section>
+
         <Section>
-          <h2 className='border-l-4 border-zinc-600 pl-2 text-xl font-semibold leading-6'>
-            专业技能
+          <h2 className='border-l-[3px] border-zinc-600 pl-2 text-xl font-semibold leading-6'>
+            个人技能
           </h2>
           <div className='flex flex-col gap-y-1'>
-            {RESUME_DATA.skills.map(skill => (
-              <div
-                className='text-pretty font-mono text-sm text-zinc-600'
-                key={skill}
-              >
-                {skill}
-              </div>
-            ))}
+            <ul className='list-disc pl-4'>
+              {RESUME_DATA.skills.map(skill => (
+                <li
+                  className='text-pretty font-mono text-sm leading-6 text-zinc-600'
+                  key={skill}
+                >
+                  {skill}
+                </li>
+              ))}
+            </ul>
           </div>
         </Section>
         <Section>
-          <h2 className='border-l-4 border-zinc-600 pl-2 text-xl font-semibold leading-6'>
+          <h2 className='border-l-[3px] border-zinc-600 pl-2 text-xl font-semibold leading-6'>
+            工作经历
+          </h2>
+          {RESUME_DATA.work.map(work => (
+            <Card key={work.company}>
+              <CardHeader>
+                <div className='flex items-center justify-between gap-x-2 text-base'>
+                  <h3 className='inline-flex items-center justify-center gap-x-1 font-semibold leading-none'>
+                    <a className='hover:underline' href={work.link}>
+                      {work.company}
+                    </a>
+                  </h3>
+                  <div className='text-sm tabular-nums text-gray-500'>
+                    {work.start} - {work.end}
+                  </div>
+                </div>
+
+                <h4 className='pt-1 font-mono text-sm leading-none'>
+                  {work.title}
+                </h4>
+              </CardHeader>
+              <CardContent className='mt-2 text-sm'>
+                <ul className='list-disc pl-4'>
+                  {work.descriptions.map(description => (
+                    <li
+                      className='text-pretty font-mono text-sm leading-6 text-zinc-600'
+                      key={description}
+                    >
+                      {description}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          ))}
+        </Section>
+
+        <Section>
+          <h2 className='border-l-[3px] border-zinc-600 pl-2 text-xl font-semibold leading-6'>
             项目经历
           </h2>
           {RESUME_DATA.projects.map(project => (
@@ -148,14 +152,28 @@ export default function Page() {
                 </div>
               </CardHeader>
               <CardContent className='mt-2'>
-                {project.descriptions.map((description, index) => (
-                  <p key={description}>
-                    {index + 1}.{description}
-                  </p>
-                ))}
+                <ul className='list-disc pl-4'>
+                  {project.descriptions.map(description => (
+                    <li
+                      className='text-pretty font-mono text-sm leading-6 text-zinc-600'
+                      key={description}
+                    >
+                      {description}
+                    </li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           ))}
+        </Section>
+
+        <Section>
+          <h2 className='border-l-[3px] border-zinc-600 pl-2 text-xl font-semibold leading-6'>
+            个人总结
+          </h2>
+          <p className='text-pretty font-mono text-sm text-zinc-600'>
+            {RESUME_DATA.summary}
+          </p>
         </Section>
       </section>
     </main>
