@@ -83,7 +83,7 @@ export default function Page() {
 
         <Section>
           <h2 className='border-l-[3px] border-zinc-600 pl-2 text-xl font-semibold leading-6'>
-            个人技能
+            个人优势
           </h2>
           <div className='flex flex-col gap-y-1'>
             <ul className='list-disc pl-4'>
